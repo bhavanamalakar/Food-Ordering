@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="p-4 m-4">
+        <div class="alert alert-danger col-lg-5 mx-auto border rounded pt-4">
+            <div class="alert alert-primary" role="alert">
+                <h4 align="center">Signup Form</h4>
+            </div>
+            <form action="/signup" method="POST" bgcolor="grey">
+                {% csrf_token %}
+                <p style="....">{{error}}</p>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1" class="form-label">First name</label>
+                    <input type="text" value="{{values.first_name}}" name="firstname" class="form-control" id="exampleFormControlInput1" placeholder="First Name">
+                </div>
+                <div class="mb-3">
+                     <label for="exampleFormControlInput1" class="form-label">Last name</label>
+                     <input type="text" value="{{values.last_name}}" name="lastname" class="form-control" id="exampleFormControlInput1" placeholder="Last Name">
+
+                </div>
+                <div class="mb-3">
+                     <label for="exampleFormControlInput1" class="form-label">Email ID</label>
+                     <input type="email" value="{{values.email}}" name="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+
+                </div>
+                <div class="mb-3">
+                     <label for="exampleFormControlInput1" class="form-label">Password</label>
+                     <input type="password" value="{{values.password}}" name="password" class="form-control" id="exampleFormControlInput1" placeholder=Password>
+
+                </div>
+                <div class="mb-3">
+                     <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
+                     <input type="text" value="{{values.phone}}" name="phone" class="form-control" id="exampleFormControlInput1" placeholder="Phone Number">
+
+                </div>
+                <div class="mb-3">
+                    <center>
+                        <button type="submit" class="btn btn-info">Signup</button>
+                    </center>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
